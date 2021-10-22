@@ -17,7 +17,7 @@ pipeline {
                 sh 'docker push icatdocker/docker_jenkins_springboot:${BUILD_NUMBER}'
                 sh 'docker rm -f $(docker ps -a -q)'
                 sh 'docker run -itd -p  8081:8080 icatdocker/docker_jenkins_springboot:${BUILD_NUMBER}'
-                sh "mvn spring-boot:run"
+          
             }
         }
     }
